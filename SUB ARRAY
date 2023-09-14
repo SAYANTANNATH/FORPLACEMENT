@@ -1,0 +1,198 @@
+//GET THE TOTAL POSSIBLE COMBINATION OF AN ARRAY
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+        
+    }
+    cout<<"Total possible combinations will be:"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i;i<n;j++)
+        {
+            for(int k=i;k<=j;k++)
+            {
+                cout<<arr[k]<<" ";
+            }
+            cout<<endl;
+        }
+    }
+}
+
+//MAXIMUM Subarray Sum(Brute Force Approach)
+#include<iostream>
+#include<climits>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+        
+    }
+    int maxsum=INT_MIN;
+    cout<<"Total possible combinations will be:"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i;i<n;j++)
+        {
+              int sum=0;
+            for(int k=i;k<=j;k++)
+            {
+                sum+=arr[k];
+            }
+            maxsum=max(maxsum,sum);
+        }
+    }
+cout<<"Maxsum will be"<<maxsum<<endl;
+}
+
+//Kadane Algorithm
+#include<iostream>
+#include<climits>
+using namespace std;
+int main()
+{
+int n;
+cin>>n;
+int arr[n];
+for(int i=0;i<n;i++)
+{
+cin>>arr[i];
+}
+int currentSum=0;
+int maxSum=INT_MIN;
+for(int i=0;i<n;i++)
+{
+  currentSum+=arr[i];
+if(currentSum<0)
+{
+  currentSum=0;
+}
+maxSum=max(maxSum,CurrentSum);
+}
+cout<<"Maxsum will be"<<maxSum<<endl;
+return 0;  
+}
+
+//CIRCULAR SUM OF SUBARRAY
+#include<iostream>
+#include<climits>
+using namespace std;
+int kadane(int arr[],int n)
+{
+    int currentSum=0;
+    int maxSum=INT_MIN;
+    for(int i=0;i<n;i++)
+    {
+        currentSum+=arr[i];
+        
+    }
+    if(currentSum<0)
+    {
+        currentSum=0;
+    }
+    maxSum=max(maxSum,currentSum);
+    return maxSum;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    
+    int wrapsum;
+    int unwrapsum;
+    
+    unwrapsum=kadane(arr,n);
+    
+    int totalSum=0;
+    for(int i=0;i<n;i++)
+    {
+        totalSum+=arr[i];
+        arr[i]=-arr[i];
+    }
+    wrapsum=totalSum + kadane(arr,n);
+    cout<<max(wrapsum,unwrapsum)<<endl;
+    
+    return 0;
+}
+
+
+//PAIR SUM PROBLEM
+#include<iostream>
+using namespace std;
+bool pairsum(int arr[],int n,int k)
+{
+    for(int i=1;i<n-1;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            if(arr[i]+arr[j]==k)
+            {
+                cout<<i<<" "<<j<<" "<<endl;
+                return true;
+            }
+        }
+    }
+    return false;
+}
+int main()
+{
+   
+    int arr[]={2,4,7,11,14,16,20,22};
+    int k=31;
+    cout<<pairsum(arr,8,k);
+    
+    return 0;
+}
+
+
+//MORE ADVANCE BEST TIME COMPLEXITY
+#include<iostream>
+using namespace std;
+bool pairsum(int arr[],int n,int k)
+{
+    int low=0;
+    int high=n-1;
+    while(low<high)
+    {
+        if(arr[low]+arr[high]==k)
+        {
+            cout<<low<<" "<<high<<endl;
+            return true;
+        }
+        else if(arr[low]+arr[high]>k)
+        {
+            high--;
+        }
+        else
+        {
+            low++;
+        }
+    }
+    return false;
+}
+int main()
+{
+    int arr[]={2,4,7,11,14,16,20,22};
+    int k=31;
+    cout<<pairsum(arr,8,k)<<endl;
+    return 0;
+}
+
+
