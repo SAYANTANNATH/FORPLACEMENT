@@ -1,0 +1,77 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main()
+{
+//     string str;
+//   // string str1(5, 'n');
+//   //cout<<str1<<endl;
+   
+//   getline(cin,str);
+//   cout<<str;
+    
+    // string a="fam";
+    // string b="ily";
+    
+   // a.append(b);
+   
+//   a=a+b;
+//     cout<<a<<endl;
+    
+//     cout<<a[4]<<endl;
+    
+    // string abc="sadhfasgbjasfb";
+    // abc.clear();
+    // cout<<abc;
+    
+    
+    string s1="abc";
+    string s2="abc";
+    
+    //cout<<s1.compare(s2)<<endl;
+    if(!s1.compare(s2))
+    {
+        cout<<"Same"<<endl;
+    }
+    else{
+        cout<<"Not Same"<<endl;
+    }
+    
+    if(s1.empty())
+    {
+        cout<<"empty"<<endl;
+    }
+    else
+    {
+        cout<<"Not empty"<<endl;
+    }
+    
+    
+    string s3="abcdfer";
+    //s3.erase(3,2);
+    //cout<<s1<<endl;
+    // cout<<s3.find("cdf");
+    // s3.insert(3,"sayantan");
+    // cout<<s3<<endl;
+    // cout<<s3.size();
+    // for(int i=0;i<s3.length();i++)
+    // {
+    //     cout<<s3[i]<<endl;
+    // }
+    
+    // string s5=s3.substr(3,5);
+    // cout<<s5<<endl;
+    
+    
+    
+   // string i="987";
+   // int x=stoi(i);
+    //cout<<x+3<<endl;
+    int x = 987;
+
+    // Convert both x and 98 to strings and then concatenate
+    cout << to_string(x) + to_string(98) << endl;
+    
+    
+}
