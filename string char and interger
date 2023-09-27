@@ -1,0 +1,39 @@
+From the biggest number from the numeric string
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    string str="1235329";
+    
+    
+    //Highest number that has to created 
+    sort(str.begin(),str.end(),greater<int>());
+    cout<<str<<endl;
+    
+    
+    //smallest number that has to be created
+    sort(str.begin(),str.end(),less<int>());
+    
+    cout<<str<<endl;
+    return 0;
+}
+
+
+
+#using for characters
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main()
+{
+  string s="aaFDCedsjK";
+  transform(s.begin(),s.end(),s.begin(),::toupper);
+  cout<<"The uppercase will be"<<s<<endl;
+  transform(s.begin(),s.end(),s.begin(),::toupper);
+  cout<<"The lowercase will be"<<s<<endl;
+  return 0;
+
+}
