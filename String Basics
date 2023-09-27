@@ -1,0 +1,57 @@
+UPPER CASE TO LOWER AND LOWER CASE TO UPPER CASE
+
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string str="asbfDeR";
+
+    //Convert to upper case
+    // for(int i=0;i<=str.size();i++)
+    // {
+    //     if(str[i]>='a' && str[i]<='z')
+    //     {
+    //         str[i]-=32;
+    //     }
+    // }
+    // cout<<str;
+    
+    //Convert in into upper case
+    for(int i=0;i<str.size();i++)
+    {
+        if(str[i]>='A' && str[i]<='Z')
+        {
+            str[i] +=32;
+        }
+    }
+    cout<<str;
+    return 0;
+    
+}
+
+
+//BY USING INBUILD FUNCTIONS
+#include<iostream>
+#include<string>
+#include<algorithm> // Include the algorithm header for the transform function
+using namespace std;
+
+int main()
+{
+    string str = "asbfDeR";
+
+    // Use the transform function to convert the string to uppercase
+    transform(str.begin(), str.end(), str.begin(), ::toupper);
+
+    // Output the modified string
+    cout << str << endl;
+    
+    
+    
+    
+    transform(str.begin(),str.end(),str.begin(),::tolower);
+    cout << str<< endl;
+
+    return 0;
+}
