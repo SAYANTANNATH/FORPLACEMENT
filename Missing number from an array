@@ -1,0 +1,23 @@
+#include <iostream>
+
+int findMissingNumber(int arr[], int n) {
+    int totalSum = (n + 1) * (n + 2) / 2; // Sum of all numbers in the expected range
+    int arraySum = 0;
+
+    for (int i = 0; i < n; i++) {
+        arraySum += arr[i];
+    }
+
+    // The missing number is the difference between the total sum and the array sum
+    return totalSum - arraySum;
+}
+
+int main() {
+    int numbers[] = {1, 2, 4, 5}; // Example input array with one missing number
+    int n = sizeof(numbers) / sizeof(numbers[0]); // Calculate the size of the array
+
+    int missingNumber = findMissingNumber(numbers, n);
+    std::cout << "The missing number is: " << missingNumber << std::endl;
+
+    return 0;
+}
